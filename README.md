@@ -1,6 +1,6 @@
-# Fix invalid keyboard layout typos.
+# Fix keyboard layout typos.
 
-This script takes data from clipboard, determines its language and based on that changes keyboard layout for that data.
+This script takes data from clipboard, determines its language and changes keyboard layout for that data.
 Thus you are able to change keyboard layout postfactum.
 
 ### Examples:
