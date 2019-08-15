@@ -9,7 +9,11 @@ Thus you are able to change keyboard layout postfactum.
 
 It works only for english and russian layouts.  
 
+### Compatible with:
+1. Linux (tested on kUbuntu 18)
+2. Mac OS
+
 ### P.S.  
-This is Linux version. It could be cross-platform and simpler using <i>clipboard</i> library but solution is based primarily on Linux cmd to avoid Python dependencies (to easily bind this script to a keyboard shortcut).
+This script could have been done more easily using clipboard python library. This was done to avoid problems with dependencies (for easy binding to a keyboard shortcut).
 
 
