@@ -14,6 +14,6 @@ It works only for english and russian layouts.
 2. Mac OS
 
 ### P.S.  
-This script could have been done more easily using clipboard python library. This was done to avoid problems with dependencies (for easy binding to a keyboard shortcut).
+This script could have been done more easily using clipboard python library. Program is based on terminal commands to avoid problems with dependencies (for easy binding to a keyboard shortcut).
 
 
