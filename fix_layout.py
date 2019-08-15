@@ -10,7 +10,10 @@
 # import clipboard
 import subprocess
 import os
+import platform
 
+
+SYSTEM = platform.system()
 
 eng_rus_map = {
     'f': 'а', ',': 'б', 'd': 'в', 'u': 'г', 'l': 'д', 't': 'е', '`': 'ё', ';': 'ж', 'p': 'з', 'b': 'и', 'q': 'й',
@@ -26,7 +29,12 @@ russian_alphabet = set(rus_eng_map.keys()) - {',', '?', '.', '"', ':', ';', '', 
 
 # Get text from clipboard
 # text = clipboard.paste()
-text = subprocess.check_output("xclip -o | awk '{print}'", shell=True).decode()[:-1]
+if SYSTEM == 'Linux':
+    text = subprocess.check_output("xclip -o | awk '{print}'", shell=True).decode()[:-1]
+elif SYSTEM == 'Darwin':
+    text = subprocess.check_output("pbpaste", shell=True).decode()
+else:
+    exit(1)
 result = []
 
 
@@ -45,4 +53,9 @@ for letter in text:
 
 # Paste result to clipboard
 # clipboard.copy("".join(result))
-os.system("echo '{data}' | xclip -selection c".format(data="".join(result)))
+if SYSTEM == 'Linux':
+    os.system("echo '{data}' | xclip -selection c".format(data="".join(result)))
+elif SYSTEM == 'Darwin':
+    os.system("echo {data} | pbcopy".format(data="".join(result)))
+else:
+    exit(1)
