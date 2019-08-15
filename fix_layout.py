@@ -42,9 +42,6 @@ for letter in text:
     except KeyError:
         result.append(letter)
 
-# Cut \n in the end of line
-result = result[:-1]
-
 
 # Paste result to clipboard
 # clipboard.copy("".join(result))
